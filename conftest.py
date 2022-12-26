@@ -12,17 +12,18 @@ def pytest_addoption(parser):
 def executer(request):
     brw_name = request.config.getoption("--browser")
     base_url = request.config.getoption("--base_url")
+    executor = request.config.getoption("--exec")
 
     driver = webdriver.Remote(
-        command_executor=f"http://{exec}:4444/wd/hub",
-        desired_capabilities={"browserName": brw_name, "platformName": "Windows 10"}
+        command_executor=f"http://{executor}:4444/wd/hub",
+        desired_capabilities={"browserName": brw_name}
     )
 
     driver.base_url = base_url
-    return driver
-
+    q
     def closing():
         driver.quit()
-
+        
     request.addfinalizer(closing)
+        
     return driver
