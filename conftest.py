@@ -20,7 +20,7 @@ def executer(request):
     )
 
     driver.base_url = base_url
-    q
+   
     def closing():
         driver.quit()
         
