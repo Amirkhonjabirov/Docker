@@ -3,14 +3,14 @@ from selenium import webdriver
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", default="chrome")
+    parser.addoption("--browser_name", default="chrome")
     parser.addoption("--base_url", default="http://192.168.100.3:8081/")
     parser.addoption("--exec", action="store", default="172.18.96.1")
 
 
 @pytest.fixture
 def executer(request):
-    brw_name = request.config.getoption("--browser")
+    brw_name = request.config.getoption("--browser_name")
     base_url = request.config.getoption("--base_url")
     executor = request.config.getoption("--exec")
 
