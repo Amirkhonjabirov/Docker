@@ -5,8 +5,8 @@ from selenium import webdriver
 def pytest_addoption(parser):
     parser.addoption("--browser_name", default="chrome")
     parser.addoption("--base_url", default="http://192.168.100.3:8081/")
-    parser.addoption("--exec", action="store", default="172.18.96.1")
-    parser.addoption('--browser_version', default='105.0')
+    parser.addoption("--exec", action="store", default="http://172.25.144.1")
+    parser.addoption('--browser_version', default='108.0')
 
 
 @pytest.fixture
